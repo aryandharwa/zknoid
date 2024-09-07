@@ -39,10 +39,10 @@ export default function BattleshipsLobby({
         lobbyId={params.lobbyId}
         query={
           networkStore.protokitClientStarted
-            ? client_.query.runtime.RandzuLogic
+            ? client_.query.runtime.BattleshipsLogic
             : undefined
         }
-        contractName={'RandzuLogic'}
+        contractName={'BattleshipsLogic'}
         config={battleshipsConfig}
       />
     </GamePage>

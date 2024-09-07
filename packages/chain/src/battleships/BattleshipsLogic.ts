@@ -7,7 +7,7 @@ import { MatchMaker } from '../engine/MatchMaker';
 
 const BOARD_SIZE = 10; // 10x10 board for Battleships
 
-export class WinWitness extends Struct({
+export class BattleshipsWinWitness extends Struct({
   hitCoordinates: Provable.Array(
     Struct({ x: UInt32, y: UInt32 }),
     BOARD_SIZE
@@ -50,8 +50,8 @@ export class BattleshipsField extends Struct({
       });
     }
   
-   // Check if the player has won and return a WinWitness if true
-   checkWin(shipPositions: { x: number; y: number }[], bombs: { x: number; y: number }[]): WinWitness | string {
+   // Check if the player has won and return a BattleshipsWinWitness if true
+   checkWin(shipPositions: { x: number; y: number }[], bombs: { x: number; y: number }[]): BattleshipsWinWitness | string {
     let hasWon = Bool(true);
 
     const hitCoordinates = [];
@@ -72,9 +72,9 @@ export class BattleshipsField extends Struct({
       }
     }
 
-    // Return a WinWitness if the player has won
+    // Return a BattleshipsWinWitness if the player has won
     if (hasWon.toBoolean()) {
-      return new WinWitness({
+      return new BattleshipsWinWitness({
         hitCoordinates: hitCoordinates,
         shipCoordinates: shipCoordinates,
       });
@@ -221,7 +221,7 @@ export class BattleshipsField extends Struct({
     public async makeMove(
       gameId: UInt64,
       newField: BattleshipsField,
-      winWitness: WinWitness | string,
+      winWitness: BattleshipsWinWitness | string,
     ): Promise<void> {
       // Fetch game information
       const sessionSender = await this.sessions.get(this.transaction.sender.value);

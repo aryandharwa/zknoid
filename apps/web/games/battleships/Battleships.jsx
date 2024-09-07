@@ -25,7 +25,7 @@ import {
   ClientAppChain,
   PENDING_BLOCKS_NUM_CONST,
   BattleshipsField,
-  WinWitness,
+  BattleshipsWinWitness,
 } from 'zknoid-chain-dev';
 import {
   useLobbiesStore,
@@ -126,7 +126,7 @@ export default function Battleships() {
           UInt64.from(matchQueue.gameInfo.gameId),
           updatedBattleshipsField,
           winWitness1 ||
-          new WinWitness({
+          new BattleshipsWinWitness({
             x: UInt32.from(0),
             y: UInt32.from(0),
             directionX: Int64.from(0),

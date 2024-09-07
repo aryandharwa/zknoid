@@ -1,3 +1,3 @@
-import { BattleshipsLogic, BattleshipsField, WinWitness } from './BattleshipsLogic';
+import { BattleshipsLogic, BattleshipsField, BattleshipsWinWitness } from './BattleshipsLogic';
 
-export { BattleshipsLogic, BattleshipsField, WinWitness };
+export { BattleshipsLogic, BattleshipsField, BattleshipsWinWitness };

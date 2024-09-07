@@ -20,7 +20,7 @@ import { inject } from 'tsyringe';
 import { ZNAKE_TOKEN_ID } from '../constants';
 
 const PLAYER_AMOUNT = 2;
-export const DEFAULT_PARTICIPATION_FEE = ProtoUInt64.from(10 ** 9);
+export const DEFAULT_PARTICIPATION_FEE = ProtoUInt64.from(0);
 
 export class RoundIdxUser extends Struct({
   roundId: UInt64,

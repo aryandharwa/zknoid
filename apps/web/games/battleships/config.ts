@@ -25,5 +25,5 @@ export const battleshipsConfig = createZkNoidGameConfig({
     BattleshipsLogic,
   },
   page: Battleships,
-  // lobby: BattleshipsLobby
+  lobby: BattleshipsLobby
 });
