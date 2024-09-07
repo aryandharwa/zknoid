@@ -6,25 +6,20 @@ import { Balances } from './framework';
 import { ModulesConfig } from '@proto-kit/common';
 import { CheckersLogic } from './checkers';
 import { GuessGame } from './number_guessing';
+import { BattleshipsLogic } from './battleships/BattleshipsLogic';
 
 const modules = {
-  ArkanoidGameHub,
-  ThimblerigLogic,
   Balances,
-  RandzuLogic,
-  CheckersLogic,
-  GuessGame
+  GuessGame,
+  BattleshipsLogic
 };
 
 const config: ModulesConfig<typeof modules> = {
-  ArkanoidGameHub: {},
-  ThimblerigLogic: {},
   Balances: {
     totalSupply: UInt64.from(10000),
   },
-  RandzuLogic: {},
-  CheckersLogic: {},
-  GuessGame: {}
+  GuessGame: {},
+  BattleshipsLogic: {},
 };
 
 export default {

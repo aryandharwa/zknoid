@@ -7,16 +7,11 @@ import { pokerConfig } from '@/games/poker/config';
 import { tileVilleConfig } from '@/games/tileville/config';
 import { lotteryConfig } from '@/games/lottery/config';
 import { numberGuessingConfig } from './number_guessing/config';
+import { battleshipsConfig } from './battleships/config';
 
 export const zkNoidConfig = createConfig({
   games: [
-    lotteryConfig,
-    tileVilleConfig,
-    randzuConfig,
-    checkersConfig,
-    thimblerigConfig,
-    pokerConfig,
-    arkanoidConfig,
-    numberGuessingConfig
+    numberGuessingConfig,
+    battleshipsConfig
   ],
 });
