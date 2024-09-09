@@ -1,6 +1,5 @@
 'use client'
 
-
 import { useContext, useEffect, useState } from 'react';
 import { Int64, PublicKey, UInt32, UInt64 } from 'o1js';
 import { useStore } from 'zustand';
@@ -57,7 +56,6 @@ const competition = {
   prizeFund: BigInt(0),
 };
 
-
 export default function Battleships() {
 
   const [gameState, setGameState] = useState(GameState.NotStarted);
@@ -66,8 +64,6 @@ export default function Battleships() {
   const [loadingElement, setLoadingElement] = useState({ x: 0, y: 0 });
 
   const { client } = useContext(ZkNoidGameContext);
-
-
 
   const networkStore = useNetworkStore();
   const matchQueue = useBattleshipsMatchQueueStore();
@@ -81,7 +77,6 @@ export default function Battleships() {
   const getRatingQuery = api.ratings.getGameRating.useQuery({
     gameId: 'battleships',
   });
-
 
   const proveOpponentTimeout = async () => {
     const battleshipsLogic = client.runtime.resolve('BattleshipsLogic');
@@ -154,7 +149,6 @@ export default function Battleships() {
     }
   };
 
-
   const lobbiesStore = useLobbiesStore();
 
 
@@ -162,7 +156,6 @@ export default function Battleships() {
     matchQueue.resetLastGameState();
     setGameState(GameState.NotStarted);
   };
-
 
   const mainButtonState = loading
     ? MainButtonState.TransactionExecution
@@ -192,8 +185,6 @@ export default function Battleships() {
     [GameState.Won]: 'YOU WON',
     [GameState.Lost]: 'YOU LOST',
   };
-
-
 
   return (
     <GamePage
@@ -599,8 +590,6 @@ export default function Battleships() {
             startPrice: lobbiesStore.lobbies?.[0] ? Number(lobbiesStore.lobbies[0].fee) : 0,
           }}
         />
-
-
 
       </motion.div>
     </GamePage>

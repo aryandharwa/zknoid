@@ -1,7 +1,7 @@
 import GamePage from '@/components/framework/GamePage';
 import { battleshipsConfig } from '@/games/battleships/config';
-import RandzuCoverSVG from '@/games/randzu/assets/game-cover.svg';
-import RandzuCoverMobileSVG from '@/games/randzu/assets/game-cover-mobile.svg';
+import BattleshipsCoverSVG from '../assets/game-cover.svg';
+import BattleshipsCoverMobileSVG from '../assets/game-cover-mobile.svg';
 import { useContext, useState } from 'react';
 import ZkNoidGameContext from '@/lib/contexts/ZkNoidGameContext';
 import { ClientAppChain, ProtoUInt64 } from 'zknoid-chain-dev';
@@ -31,8 +31,8 @@ export default function BattleshipsLobby({
   return (
     <GamePage
       gameConfig={battleshipsConfig}
-      image={RandzuCoverSVG}
-      mobileImage={RandzuCoverMobileSVG}
+      image={BattleshipsCoverSVG}
+      mobileImage={BattleshipsCoverMobileSVG}
       defaultPage={'Lobby list'}
     >
       <LobbyPage
